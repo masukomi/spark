@@ -24,56 +24,11 @@ scripts that can output in that format.
 
 Invoke help with `spark -h`.
 
-## cooler usage
+## Why this flavor
 
-There's a lot of stuff you can do.
+I just wanted to add some color, so there are 2 new options and a behavior 
+change: it will measure size on absolute value, and you can specify if you
+want regular green/red for positive/negative value, or inverted colors:
 
-Number of commits to the github/github Git repository, by author:
+Give it a try
 
-```sh
-› git shortlog -s |
-      cut -f1 |
-      spark
-  ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▃▁▁▁▁▁▁▁▁▂▁▁▅▁▂▁▁▁▂▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-```
-
-Magnitude of earthquakes over 1.0 in the last 24 hours:
-
-```sh
-› curl http://earthquake.usgs.gov/earthquakes/catalogs/eqs1day-M1.txt --silent | 
-  sed '1d' |
-  cut -d, -f9 |
-  spark
-  ▅▆▂▃▂▂▂▅▂▂▅▇▂▂▂▃▆▆▆▅▃▂▂▂▁▂▂▆▁▃▂▂▂▂▃▂▆▂▂▂▁▂▂▃▂▂▃▂▂▃▂▂▁▂▂▅▂▂▆▆▅▃▆
-```
-
-Code visualization. The number of characters of `spark` itself, by line, ignoring empty lines:
-
-```sh
-› awk '{ print length($0) }' spark |
-  grep -Ev 0 |
-  spark
-  ▁▁▁▁▅▁▇▁▁▅▁▁▁▁▁▂▂▁▃▃▁▁▃▁▃▁▂▁▁▂▂▅▂▃▂▃▃▁▆▃▃▃▁▇▁▁▂▂▂▇▅▁▂▂▁▇▁▃▁▇▁▂▁▇▁▁▆▂▁▇▁▂▁▁▂▅▁▂▁▆▇▇▂▁▂▁▁▁▂▂▁▅▁▂▁▁▃▁▃▁▁▁▃▂▂▂▁▁▅▂▁▁▁▁▂▂▁▁▁▂▂
-```
-
-Since it's just a shell script, you could pop it in your prompt, too:
-
-```
-ruby-1.8.7-p334 in spark/ on master with history: ▂▅▇▂
-›
-```
-
-## wicked cool usage
-
-Sounds like a wiki is a great place to collect all of your 
-[wicked cool usage][wiki] for spark.
-
-## ▇▁ ⟦⟧ ▇▁
-
-This is a [@holman][holman] joint.
-
-[dotfiles]: https://github.com/holman/dotfiles
-[brew]:     https://github.com/mxcl/homebrew
-[bin]:      https://github.com/holman/spark/blob/master/spark
-[wiki]:     https://github.com/holman/spark/wiki/Wicked-Cool-Usage
-[holman]:   https://twitter.com/holman
