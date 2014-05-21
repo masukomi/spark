@@ -1,4 +1,4 @@
-# spark
+# color spark
 ### sparklines for your shell
 
 See? Here's a graph of your productivity gains after using spark: ▁▂▃▅▇
@@ -30,5 +30,10 @@ I just wanted to add some color, so there are 2 new options and a behavior
 change: it will measure size on absolute value, and you can specify if you
 want regular green/red for positive/negative value, or inverted colors:
 
-Give it a try
+Here is an example using the [git-difference](https://github.com/pcarranza/dotfiles/blob/master/bin/git-difference) 
+script there is in my dotfiles project
 
+![Color Spark](color-spark.png)
+
+And I do not want to ruin the original simplicity of the code, spark is great as it originally is, 
+this is just a subproduct out of it.
