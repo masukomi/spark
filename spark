@@ -42,7 +42,7 @@ spark()
   local n numbers=
 
   # find min/max values
-  local min=0xffffffff max=0
+  local min=${MIN:-0xffffffff} max=${MAX:-0}
 
   for n in ${@//,/ }
   do
@@ -84,7 +84,8 @@ spark()
 }
 
 # If we're being sourced, don't worry about such things
-if [ "$BASH_SOURCE" == "$0" ]; then
+if [ "$BASH_SOURCE" == "$0" ]
+then
   # Prints the help text for spark.
   help()
   {
